@@ -1,0 +1,68 @@
+// Lab17A.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//program that will read 2 strings and compare them.
+
+#include <iostream>
+#include <string>
+#include <cstdlib>
+
+using namespace std;
+bool compareletters(string s1, string s2);
+bool inside(string s1, string s2);
+
+int main()
+{
+	string s1, s2;
+	bool a, b;
+	cout << "enter 2 strings on separate lines: ";
+	cin >> s1 >> s2;
+	a = compareletters(s1, s2);
+	b = inside(s1, s2);
+
+	if (a == true)
+	{
+		cout << s1 << " and " << s2 << " have the same first and last letters" << endl;
+	}
+	else
+	{
+		cout << s1 << " and " << s2 << " do not have the same first and last letters" << endl;		
+	}
+
+	if(b == true)
+		cout << s2 << " is inside " << s1 << endl;
+	else
+		cout << s2 << " is not inside " << s1 << endl;
+
+}
+
+bool compareletters(string s1, string s2)
+{
+	bool same = false;
+	int n2 = s2.length() - 1;
+	int n1 = s1.length() - 1;
+
+	if (s1[0] == s2[0] && s1[n1] == s2[n2] )
+	{
+		same = true;
+	}
+	else
+		same = false;
+
+
+	return same;
+}
+
+bool inside(string s1, string s2)
+{
+	bool in = false;
+    int index = s1.find(s2);
+
+
+	if (index >= 0 && index < s1.length())
+		in = true;
+	else
+		in = false;
+
+	return in;
+
+}
