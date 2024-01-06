@@ -1,0 +1,23 @@
+// Lab10A.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//seeing if numbers are divisable by 3 or 5 using a loop statment and if they are printing them.
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	int usernum = 1 ,count = 0;
+
+	while (usernum != 0)
+	{
+		cout << "Enter an integer: " << endl;
+		cin >> usernum;
+
+		if (usernum % 3 == 0 || usernum % 5 == 0)
+			count++;
+		
+
+	}
+	count = count - 1;
+	cout << "Count equals: " << count;
+}
