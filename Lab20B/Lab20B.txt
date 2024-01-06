@@ -1,0 +1,43 @@
+// Lab20B.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//function that receives an array of strings and prints the third character from each string and prints a space if there is an x.
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+void reader(string arr[],int len);
+
+int main()
+{
+	string arr[10];
+	int len = 10;
+
+	ifstream infile;
+	infile.open("Lab20B.txt");
+	for (int i = 0; i < len; i++)
+	{
+		infile >> arr[i];
+	}
+
+	reader(arr, len);
+
+	
+
+}
+
+void reader(string arr[],int len)
+{
+
+	for (int i = 0; i < 10; i++)
+	{
+		if (arr[i][2] == 'x')
+			cout << " ";
+		else
+			cout << arr[i][2];
+
+	}
+
+}
+
