@@ -1,0 +1,33 @@
+// Lab10B.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//reads 10 integers from the file, Lab10B.txt, and find the total and average of the input values.
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    double  num, total = 0, average = 0, count = 0;
+
+    ifstream infile;
+
+    infile.open("Lab10B.txt");
+
+    while (!infile.eof())
+    {
+        infile >> num;
+
+        total = total + num;
+        count++;
+
+        cout << num << " ";
+    }
+
+    cout << endl;
+    average = total / count;
+    cout << "Total: " << total << endl;
+    cout << "Average: " << average << endl;
+
+
+}
