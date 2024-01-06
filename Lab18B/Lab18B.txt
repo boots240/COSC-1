@@ -1,0 +1,67 @@
+// Lab18B.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//ALi Mohammed
+// program that will read strings from a text file and turn them into “encrypted code”.  
+
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <cctype>
+#include <fstream>
+
+
+using namespace std;
+
+bool isVowel(char c);
+string encrypt(string s1);
+
+int main()
+{
+    
+    string s1, s2;
+
+    string newsentence = encrypt(s2);
+
+    ifstream infile;
+
+    infile.open("Lab18B.txt");
+
+    while (!infile.eof())
+    {
+        getline(infile, s1);
+        cout << s1 << endl;
+        newsentence = encrypt(s1);
+        cout << newsentence << endl;
+    }
+}
+
+bool isVowel(char c)
+{
+    if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+    {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+
+string encrypt(string s1)
+{
+    string s2 = "";
+     
+    for (int i = 0; i < s1.length(); i++)
+    {
+        
+        if (isVowel(s1[i]) == true)
+            s2 = s2;
+        else if (s1[i] == ' ')
+            s2 = s2 + '*';
+        else
+            s2 = s2 + s1[i];
+    }
+
+    return s2;
+}
+
+
