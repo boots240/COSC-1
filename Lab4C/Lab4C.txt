@@ -1,0 +1,20 @@
+// Lab4C.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//calulating how many trees can fit on a fence line 
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    double fencelength, radius;
+    int numberoftrees;
+    string treetype;
+
+    cout << "Enter length of the fence line, radius, and tree type:" << endl;
+    cin >> fencelength >> radius>>treetype;
+    radius = radius * 2;
+    numberoftrees = fencelength / radius;
+    cout << "number of " << treetype<< " trees " << "is " << numberoftrees;
+
+}
+
