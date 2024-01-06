@@ -1,0 +1,43 @@
+// Lab14B.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//Program that will create a multiplication table for an input number
+
+#include <iostream>
+using namespace std;
+
+int getnum();
+void printtable(int num);
+
+int main()
+{   
+
+	int num;
+	
+	num = getnum();
+	printtable(num);
+
+}
+
+int getnum()
+{
+
+	int num;
+
+	do
+	{
+		cout << "Enter a positive integer between 1 and 10: ";
+		cin >> num;
+	} while (num < 1 || num > 10);
+
+	return num;
+
+}
+
+void printtable(int num)
+{
+
+	for (int i = 1 ; i <= 10; i++)
+	{
+		cout << i << "\t" << num * i << endl;
+	}
+}
