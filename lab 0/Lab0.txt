@@ -1,0 +1,34 @@
+// Lab0.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+
+using namespace std;
+
+
+int main()
+{
+	int feet, inches;
+	double length;
+
+	cout << "enter length in inches ";
+	cin >> length;
+	cout << endl;
+
+	feet = length / 12;
+	inches = length - (feet * 12);
+
+	cout << "Feet: " << feet << endl;
+	cout << "inches: " << inches << endl;
+
+
+
+
+
+
+}
+
+
+
+
+
