@@ -1,0 +1,59 @@
+// Lab12B.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+ //program that will average quiz grades for an unknown number of students.
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+int main()
+{
+    int grade = 0;
+    int total = 0;
+    int average = 0;
+    int count = 0;
+
+    ifstream infile;
+
+    infile.open("Lab12B.txt");
+
+    if (!infile)
+    {
+        cout << "Could not open file" << endl;
+        infile.close();
+    }
+     
+    //cout << "Grade: ";
+
+
+    while (!infile.eof())
+    {
+
+        cout << "Grade: ";
+
+        total = 0;
+        average = 0;
+        count = 0;
+        while (infile >> grade)
+        {
+            if (grade != 0)
+            {
+                total += grade;
+                count++;
+                cout << grade << " ";
+            }
+            else
+            {
+                break;
+            }
+        }
+        average = total / count;
+        cout << " Average: " << average<< endl;
+        
+        
+    }
+
+    infile.close();
+
+
+}
