@@ -1,0 +1,100 @@
+// Lab17C.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//program will count the number of words and vowels in a sentence.
+
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <cctype>
+#include <fstream>
+
+using namespace std;
+
+bool isvowel(char character);
+int countvowels(string s1);
+int countwords(string s1);
+
+int main()
+{
+  
+   string s1, b, c;
+   int numVowel,cow;
+
+    ifstream infile;
+
+    infile.open("Lab17c.txt");
+
+    while (!infile.eof())
+    {
+        getline(infile, s1);
+
+
+        cout << s1 << ": " << endl;
+       
+        countvowels(s1);
+        countwords(s1);
+
+
+        cow = countwords(s1);
+        numVowel = countvowels(s1);
+        cout <<"Number of Vowels: " << numVowel << " Number of words: " << cow << endl;
+
+
+    }
+
+}
+
+bool isVowel(char c) 
+{
+    if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') 
+    {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+
+
+int countvowels(string s1)
+{
+
+    int count = 0;
+    for (int i = 0; i < s1.length(); i++)
+
+    {
+        char c = s1.at(i);
+        if (isVowel(c) == 1)
+        {
+            count++;
+        }
+        else
+        {
+            continue;
+        }
+    }
+
+    return count;
+}
+
+
+
+
+int countwords(string s1)
+{
+    int count = 0;
+   
+
+    for (int i = 0; i < s1.length(); i++)
+    {
+        if (s1[i] == ' ')
+            count++;
+       
+
+
+    }
+
+    
+    return count +1 ;
+}
