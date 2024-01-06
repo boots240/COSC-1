@@ -1,0 +1,176 @@
+// Lab18A.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//Black Jack Game
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <string>
+
+using namespace std;
+
+enum cards { ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING};
+
+void drawTheCard(cards c);
+int getpoints(cards c);
+void PlayerPickCard(int& totalScore);
+
+int main()
+{
+	srand(time(0));
+
+	string answer = "no";
+	char p;
+
+	int playerscore = 0;
+
+	int housescore = rand() % 20 + 2;
+
+	cout << "WHOULD YOU LIKE A CHANCE TO WIN BIGGG?!?!?!" << endl;
+	cin >> answer;
+	if (answer == "yes")
+	{
+		cout << "The game is black jack...press P to play:";
+		cin >> p;
+	}
+	else
+		cout << "Shoulda said yes....scared money don't make money" << endl;
+
+
+	if (p == 'p')
+	{
+
+		cout << "The House Score is: " << housescore << endl;
+		PlayerPickCard(playerscore);
+		PlayerPickCard(playerscore);
+
+		cout << "Do You wanna pick another card" << endl;
+		cin >> answer;
+
+		if (answer == "yes")
+			PlayerPickCard(playerscore);
+
+		cout << playerscore;
+		if (playerscore > 21)
+			cout << "!!!!!PLAYER HAS BUSTED!!!!!" << endl;
+		else if (playerscore > housescore)
+			cout << "!!!!!PLAYER HAS WON BIGGGGGG!!!!!" << endl;
+		else
+			cout << "!!!!THE HOUSE DOMINATES ONCE AGAIN!!!!" << endl;
+	}
+	
+		
+
+
+}
+
+void drawTheCard(cards c)
+{
+	switch (c)
+
+	{
+	case  ACE: cout << "*****" << endl;
+		       cout << "* A * " << endl;
+			   cout << "***** " << endl; break;
+	case TWO: cout << "*****" << endl;
+		      cout << "* 2 * " << endl;
+		      cout << "***** " << endl; break;
+	case THREE: cout << "*****" << endl;
+		        cout << "* 3 * " << endl;
+		        cout << "***** " << endl; break;
+	case FOUR: cout << "*****" << endl;
+		       cout << "* 4 * " << endl;
+		       cout << "***** " << endl; break;
+	case FIVE: cout << "*****" << endl;
+		       cout << "* 5 * " << endl;
+		       cout << "***** " << endl; break;
+	case SIX: cout << "*****" << endl;
+		      cout << "* 6 * " << endl;
+		      cout << "***** " << endl; break;
+	case SEVEN: cout << "*****" << endl;
+		        cout << "* 7 * " << endl;
+		        cout << "***** " << endl; break;
+	case EIGHT: cout << "*****" << endl;
+		        cout << "* 8 * " << endl;
+		        cout << "***** " << endl; break;
+	case NINE: cout << "*****" << endl;
+		       cout << "* 9 * " << endl;
+		       cout << "***** " << endl; break;
+	case TEN: cout << "*****" << endl;
+		      cout << "* 10 * " << endl;
+		      cout << "***** " << endl; break;
+	case JACK: cout << "*****" << endl;
+		       cout << "* J * " << endl;
+		       cout << "***** " << endl; break;
+	case QUEEN: cout << "*****" << endl;
+		        cout << "* Q * " << endl;
+		        cout << "***** " << endl; break;
+	case KING: cout << "*****" << endl;
+		       cout << "* K * " << endl;
+		       cout << "***** " << endl; break;
+	default: cout << "error" << endl;
+	}
+
+
+
+
+}
+
+int getpoints(cards c)
+{
+	int p = 0;
+
+	switch (c)
+	{
+	case ACE: p = 1; break;   //only use one = when setting a variable equal to something
+	case TWO: p = 2; break;
+	case THREE: p = 3; break;
+	case FOUR: p = 4; break;
+	case FIVE:p = 5; break;
+	case SIX: p = 6; break;
+	case SEVEN: p = 7; break;
+	case EIGHT: p = 8; break;
+	case NINE: p = 9; break;
+	case TEN: p = 10; break;
+	case JACK: p = 10; break;
+	case QUEEN: p = 10; break;
+	case KING: p = 10; break;
+	default: cout << "error" << endl;
+
+	}
+
+	return p;
+}
+
+
+void PlayerPickCard(int& totalScore)
+{
+	cards c;
+	int b;
+	b = rand() % 12 + 1;
+
+	switch (b)
+	{
+	case 1: c = ACE; break;    // you need to set the cards value based on the random number
+	case 2:c = TWO; break;
+	case 3: c = THREE; break;
+	case 4: c = FOUR; break;
+	case 5:c = FIVE; break;
+	case 6: c = SIX; break;
+	case 7: c = SEVEN; break;
+	case 8: c = EIGHT; break;
+	case 9: c = NINE; break;
+	case 10: c = TEN; break;
+	case 11:c = JACK; break;
+	case 12: c = QUEEN; break;
+	case 13: c = KING; break;
+	default: cout << "error" << endl;
+	}
+
+
+	drawTheCard(c);
+	totalScore = getpoints(c) + totalScore;
+	
+
+
+}
