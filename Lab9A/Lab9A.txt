@@ -1,0 +1,34 @@
+// Lab9A.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//determines if a student is in elementary, middle or high school based on his grade.
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   
+	int grade;
+
+	cout << "to input a grade level (1-12): ";
+	cin >> grade;
+
+	if (!cin || grade > 12 || grade < 1)
+	{
+		cout << "input failure. Must enter number between (1-12)";
+		return 0;
+	}
+
+	if (grade>= 1 && grade<=5)
+		cout << "Grade " << grade << " goes to elementry school";
+	else if (grade >= 6 && grade <= 8)
+		cout << "Grade " << grade << " goes to middle school";
+	else if (grade >= 9 && grade <= 12)
+		cout << "Grade " << grade << " goes to high school";
+
+
+	
+
+
+}
+
