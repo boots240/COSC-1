@@ -1,0 +1,19 @@
+// lab2A 
+//Ali Mohammed
+// this program multiplies x and y then adds 20 to that product
+
+#include <iostream>
+using namespace std;
+int main()
+
+{
+	int x, y, z;
+	cout << "input 2 integers separated by a space" << endl;
+	cin >> x >> y;
+	z = x * y + 20;
+	cout << "Z is equal to: " << z << endl;
+
+
+	return 0;
+}
+
