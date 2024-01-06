@@ -1,0 +1,27 @@
+// Lab4B.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// Ali Mohammed
+//breaking down total seconds into hrs:mins:sec format 
+
+#include <iostream>
+using namespace std;
+int main()
+{
+
+    int elapsed_time;
+    int hrs;
+    int min;
+    int sec;
+    cout << "enter the elapsed time" << endl;
+    cin >> elapsed_time;
+
+    hrs = elapsed_time / 3600;
+    elapsed_time = elapsed_time % 3600;
+
+    min = elapsed_time / 60;
+    elapsed_time = elapsed_time % 60;
+
+    sec = elapsed_time;
+    cout << "time elapsed: " << hrs << ":" << min << ":" << sec << endl;
+
+
+}
