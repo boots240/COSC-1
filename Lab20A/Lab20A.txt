@@ -1,0 +1,67 @@
+// Lab20A.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+// program that checks if each of the item in the array are 5 more than the previous item.
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+void reader(int arr[], int len);
+bool reciver(int arr[], int len);
+
+int main()
+{
+	bool pattern;
+	int arr[10];
+	int len = 10;
+
+	reader(arr, len);
+	reciver(arr, len);
+	
+	pattern = reciver(arr, len);
+
+	if (pattern == true)
+	{
+		cout << "Array fits the pattern";
+	}
+	else if (pattern == false)
+		cout << "Array doesn't fit the pattern";
+
+}
+
+
+
+void reader(int arr[], int len)
+{
+	ifstream infile;
+	infile.open("Lab20A2.txt");
+	for (int i = 0; i < len; i++)
+	{
+		infile >> arr[i];
+	}
+
+
+	cout << "Array: ";
+	for (int j = 0; j < 10; j++)
+		cout << arr[j] << " ";
+	cout << endl;
+
+	
+}
+
+bool reciver(int arr[], int len)
+{
+
+	for (int i = 0; i < len - 1; i++)
+	{
+		if (arr[i + 1] - (arr[i]) != 5 )
+		{
+			return false;
+		}
+
+
+	}
+	return true;
+
+}
