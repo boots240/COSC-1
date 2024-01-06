@@ -1,0 +1,34 @@
+// LAB5A.cpp 
+//Ali Mohammed
+//using text files to find speed 
+
+
+#include <iostream>
+#include <iomanip> 
+#include <fstream> 
+using namespace std;
+
+int main()
+{
+    ifstream infile;
+
+    double speed, distance, time;
+
+
+    infile.open("Lab5A.txt");
+    infile >> distance >> time;
+
+    speed = distance / time;
+
+    cout << fixed << setprecision(2);
+
+    cout << "Distance Covered: " << distance << " miles" << endl;
+    cout << "Travel Time: " << time << " hours" << endl;
+    cout << "Average Traveling Speed: " << speed << " miles per hour" << endl;
+
+
+    infile.close();
+
+
+
+}
