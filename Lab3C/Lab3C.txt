@@ -1,0 +1,25 @@
+// Lab3C.
+//Ali Mohammed
+//calculating the sq and gallons of paint needed
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	double length;
+	double width;
+	double height;
+	double total_sf;
+	double total_p;
+
+	cout << "Enter the length, width, and height in that order. " << endl;
+	cin >> length >> width >> height;
+	total_sf = length * height * 2;
+	total_sf = total_sf + width * height * 2 - 48;
+	cout <<"Total sq is: "<< total_sf <<" sq" << endl;
+	total_p = total_sf / 150;
+	cout << "Total amount of paint needed is: " << total_p << " gal" << endl;
+
+}
+
