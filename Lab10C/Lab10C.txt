@@ -1,0 +1,42 @@
+// Lab10C.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//reading pairs of numbers from the text file Lab10C.txt and compare those numbers to each other.
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    int  num, num2;
+
+    ifstream infile;
+
+    infile.open("Lab10C.txt");
+
+    while (!infile.eof())
+    {
+        
+        infile >> num >> num2;
+        
+        cout << num << " - " << num2 << "  ";
+
+
+        if (num == num2)
+        {
+            cout << "Equal " << endl;
+        }
+        else if (num % 10 == num2 % 10)
+
+            cout << " same digit " << endl;
+
+        else
+            cout << " not equal " << endl;
+            
+     
+
+    }
+
+
+}
