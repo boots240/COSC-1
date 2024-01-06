@@ -1,0 +1,23 @@
+// Lab3A
+//Ali Mohammed
+//C++ program that prints this table
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    cout << "     \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////    " << endl;
+    cout << "     ==                    Student Points                      ==   " << endl;
+    cout << "     \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////    " << endl;
+    cout << "     Name\t\tLab\t\t Bonus\t\t    Total  " << endl;
+    cout << "     --------\t\t---\t\t -----\t\t    -----  " << endl;
+    cout << "    \"Joe\"\t\t43\t\t 7\t\t    50     " << endl;
+    cout << "    \"William\"\t\t50\t\t 8\t\t    58     " << endl;
+    cout << "    \"Mary Sue\"\t\t39\t\t 10\t\t    49     " << endl;
+    cout << "    \"Brian\"\t\t63\t\t 2\t\t    65     " << endl;
+    cout << "    \"Jack\"\t\t40\t\t 9\t\t    49     " << endl;
+
+
+}
+
