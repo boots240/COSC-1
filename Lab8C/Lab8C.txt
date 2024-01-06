@@ -1,0 +1,35 @@
+// Lab8C.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//putting numbers in order using if else statements
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    double a, b, c;
+
+    cout << "gimme 3 different numbers in any order: ";
+    cin >> a >> b >> c;
+
+    if (c > a && c > b && b > a)
+        cout << "The order is: " << c << b << a;
+
+    else if (b > a && b > c && c > a)
+        cout << "The order is: " << b << c << a;
+
+    else if (b > a && b > c && a > c)
+        cout << "The order is: " << b << a << c;
+
+    else if (c > a && c > b && a > b)
+        cout << "The order is: " << c << a << b;
+
+    else if (a > b && a > c && b > c)
+        cout << "The order is: " << a << b << c;
+   
+    else if (a > b && a > c && c > b)
+        cout << "The order is: " << a << b << c;
+
+
+}
+
