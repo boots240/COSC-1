@@ -1,6 +1,6 @@
 // Lab9B1.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //Ali Mohammed
-//allows the user to type in an equation and calculate the result
+//allows the user to type in an integer for an equation and calculate the result
 
 #include <iostream>
 using namespace std;
