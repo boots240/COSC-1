@@ -1,0 +1,40 @@
+// Lab11B.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//program that asks the user to guess a number between 1 and 100.
+
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main()
+{
+
+	bool found = false;
+	int number, guess, count = 0;
+
+	srand(time(0));
+	number = rand() % 100 + 1;
+
+
+	while (!found)
+	{
+		cout << "Guess the secret number: ";
+		cin >> guess;
+		count++;
+
+		cout << endl;
+
+		if (guess < number)
+			cout << "Guess Higher " << endl;
+		else if (guess > number)
+			cout << "Guess Lower " << endl;
+		else if (guess == number)
+			found = true;
+
+	}
+
+	cout << "way to go!!!!! " << "It took you "<< count << " guesses";
+
+}
