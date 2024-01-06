@@ -1,0 +1,40 @@
+// Lab7B.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//Calculating someones pay 
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   
+	double payrate, totalhours, overtime, totalpay, overtimepay, regularpay;
+
+	cout << "what are your total hours:  " << endl;
+	cout << "Tell me your pay rate: " << endl;
+	
+	cin >> totalhours;
+	cin >> payrate;
+	
+
+	if (totalhours >= 40)
+	{
+		overtime = totalhours - 40;
+		cout << "hours worked over: " << overtime;
+
+		regularpay = payrate * (totalhours - overtime);
+
+		overtimepay = overtime * payrate * 1.5;
+
+		totalpay = overtimepay + regularpay;
+
+		cout << " regular hours = 40 and " << overtime << " hours" << " of overtime at " << "$" << payrate << " per hr" << " = " << totalpay;
+
+	}
+	else
+	{
+		regularpay = payrate * totalhours;
+		cout << "Your getting paid: " << regularpay;
+
+	}
+		
