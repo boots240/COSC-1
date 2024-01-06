@@ -1,0 +1,36 @@
+// Lab9B1.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//allows the user to type in an equation and calculate the result
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	int a, b;
+	char symbole;
+
+	cout << "Enter 2 integers with a character between them, all separated by spaces:";
+	cin >> a >> symbole >> b;
+
+	switch (symbole)
+	{
+	case '+': cout << a << " + " << b << " = " << a + b;
+		break;
+	case '-': cout << a << " - " << b << " = " << a - b;
+		break;
+	case '*': cout << a << " * " << b << " = " << a * b;
+		break;
+	case '/': cout << a << " / " << b << " = " << a / b;
+		break;
+	case '%': cout << a << " % " << b << " = " << a % b;
+		break;
+
+	default: cout << "invalid";
+
+	}
+
+
+}
+
