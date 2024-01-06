@@ -1,0 +1,53 @@
+// Lab14A.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//Program that will calculate factorials for numbers read in from a text file.
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int calcFactorial(int x);
+void printresult(int x, int fac);
+
+int main()
+{
+    
+    int x;
+    int f;
+    
+
+    ifstream infile;
+
+    infile.open("Lab14A.txt");
+
+    while (!infile.eof())
+    {
+        infile >> x;
+
+        f = calcFactorial(x);
+        printresult(x,f);
+
+     
+    }
+
+}
+
+
+int calcFactorial(int x)
+{
+    int fac = 1;
+
+    for (int i = 1; i <= x; ++i)
+    {
+        fac *= i;
+    }
+
+    return fac;
+}
+
+void printresult(int x, int fac)
+{
+
+    cout << "The factorial of " << x << " is " << fac << endl;
+
+}
