@@ -1,0 +1,78 @@
+//Lab21A.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//Sorting arrays 
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+void reader(int arr[], int len);
+
+void printer(int arr[], int len);
+
+void sorter(int arr[], int len);
+
+int main()
+{
+	int len = 20;
+	int arr[20];
+	reader(arr, len);
+	printer(arr, len);
+	sorter(arr, len);
+
+
+
+}
+
+void reader(int arr[], int len)
+{
+	ifstream infile;
+	infile.open("Lab21A.txt");
+	for (int i = 0; i < len; i++)
+	{
+		infile >> arr[i];
+	}
+
+}
+
+void printer(int arr[], int len)
+{
+
+	cout << "Array: ";
+	for (int j = 0; j < 20; j++)
+		cout << arr[j] << " ";
+	cout << endl;
+
+
+}
+
+
+void sorter(int arr[], int len)
+{
+	int smallest, index, temp;
+
+	for (int i = 0; i < len - 1; i++)
+	{
+		smallest = arr[i];
+		index = i;
+
+		for (int j = i + 1; j < len; j++)
+		{
+			if (arr[j] < smallest)
+			{
+				smallest = arr[j];
+				index = j;
+			}
+		}
+
+		temp = arr[i];
+		arr[i] = arr[index];
+		arr[index] = temp;
+
+		printer(arr, len);
+	}
+
+	
+
+}
