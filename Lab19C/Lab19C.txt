@@ -1,0 +1,67 @@
+// Lab19C.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//Program that searches for a number in an array
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+void valuereader(int arr[]);
+
+bool b(int arr[], int len, int num);
+
+
+int main()
+{
+	bool inside;
+	int num;
+	int len = 20;
+	int arr[20];
+	valuereader(arr);
+
+	cout << "Array: ";
+	for (int j = 0; j < 20; j++)
+		cout << arr[j] << " ";
+	cout << endl;
+
+	cout << "Enter number to search: ";
+	cin >> num;
+
+	inside = b(arr, len, num);
+
+	if (inside == true)
+	{
+		cout << "Number is inside";
+	}
+	else if  (inside == false)
+		cout << "Number is not found";
+}
+
+void valuereader(int arr[])
+{
+
+	ifstream infile;
+	infile.open("Lab19C.txt");
+	for (int i = 0; i < 20; i++)
+	{
+		infile >> arr[i];
+	}
+
+}
+
+bool b(int arr[], int len, int num)
+{
+	
+
+	for (int i = 0; i < 20; i++)
+	{
+		if (num == arr[i])
+		{
+			return true;
+		}
+		
+
+	}
+	return false;
+}
