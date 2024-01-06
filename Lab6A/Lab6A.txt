@@ -1,0 +1,26 @@
+// Lab6A.cpp 
+//Ali Mohammed
+// code made to calculate kilometers
+
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+	ifstream infile;
+	double kilometers, miles;
+
+	infile.open("Lab6A.txt");
+	infile >> miles;
+
+	cout << fixed << setprecision(2);
+	kilometers = 1.60935 * miles;
+
+	cout << kilometers << " Kilometers" << "\t" << miles << " miles" << endl;
+
+	infile.close();
+
+}
+
