@@ -1,0 +1,33 @@
+// Lab6B.cpp 
+//Ali Mohammed
+// code made to calculate Velocity
+
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+
+int main()
+{
+
+	ifstream infile;
+
+	const double g = 32.174;
+	double time;
+	double velocity;
+
+	infile.open("Lab6B.txt");
+	infile >> time;
+
+	velocity = .5 * g * pow(time, 2);
+	cout << fixed << setprecision(2);
+
+	cout << "velocity = " << velocity << "\t" << "Time = " << time << endl;
+
+	infile.close();
+
+
+
+}
