@@ -1,0 +1,57 @@
+// Lab8B.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//calculating total price with discounts using if else statements
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	double numofpackeges, totalprice, sofcost;
+
+	sofcost = 99;
+	
+	cout << "How mnay packeges will you be ordering: ";
+	cin >> numofpackeges;
+
+	if (numofpackeges >= 10 && numofpackeges <= 19)
+	{
+		totalprice = numofpackeges * sofcost;
+
+		totalprice = totalprice * .20;
+
+		cout << "total cost: " << totalprice;
+	}
+	else if(numofpackeges >= 20 && numofpackeges <= 49)
+	{
+		
+		totalprice = numofpackeges * sofcost;
+
+		totalprice = totalprice * .30;
+
+		cout << "total cost: " << totalprice;
+		
+	}
+	else if (numofpackeges >= 50 && numofpackeges <= 99)
+	{
+
+		totalprice = numofpackeges * sofcost;
+
+		totalprice = totalprice * .40;
+
+		cout << "total cost: " << totalprice;
+
+	}
+	else if (numofpackeges >= 100 )
+	{
+
+		totalprice = numofpackeges * sofcost;
+
+		totalprice = totalprice * .50;
+
+		cout << "total cost: " << totalprice;
+
+	}
+	else 
+		totalprice = numofpackeges * sofcost;
+	    cout << "total cost: " << totalprice;
+
