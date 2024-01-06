@@ -1,0 +1,56 @@
+// Lab17B.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//program that will read strings from a text file and perform string operations on them.
+
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <fstream>
+
+using namespace std;
+
+string backwards(string s1);
+void separate(string s1);
+
+int main()
+{
+    string s1, b, c;
+
+
+    ifstream infile;
+
+    infile.open("Lab17B.txt");
+
+    while (!infile.eof())
+    {
+        getline(infile, s1);
+
+        cout << s1 << ": " << " Length:" << s1.length() << " --> " << backwards(s1) << endl;
+        separate(s1);
+
+    }
+
+}
+
+string backwards(string s1)
+{
+    
+    reverse(s1.begin(), s1.end());
+    
+    return s1;
+}
+    
+void separate(string s1)
+{
+
+    for (int i = 0; i < s1.length(); i++)
+    {
+        if (s1[i] == ' ')
+            cout << endl;
+        else
+        cout << s1[i];
+
+    }
+    cout << endl; 
+}
+
