@@ -1,0 +1,40 @@
+// Lab13B.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//Program that will calculate fines for overdue books at the library
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+double computefine(int numbooks, int numdaysoverdue);
+
+
+int main()
+{
+
+    double  numdaysoverdue,numbooks;
+
+    cout << "Enter number of days over due: " << endl;
+    cin >> numdaysoverdue;
+    cout << "Enter how many books you've taken out: " << endl;
+    cin >> numbooks;
+
+    computefine(numdaysoverdue, numbooks);
+    
+}
+
+double computefine(int numbooks, int numdaysoverdue)
+{
+    double fine;
+
+    fine = .100 * numdaysoverdue * numbooks;
+
+
+    if (fine <= 1)
+        cout << "Your fine amount is: " << fixed << setprecision(2) << fine << " cents." << endl;
+    else
+        cout << "Your fine amount is: " << fixed << setprecision(2) << "$" << fine << endl;
+
+    return fine;
+
+}
