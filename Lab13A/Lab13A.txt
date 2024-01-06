@@ -1,0 +1,75 @@
+// Lab13A.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//program that will use logic from previous programs in its functions.
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+
+void isprime(int num);
+void printDivisors(int num);
+ 
+int main()
+{
+    int num;
+
+    ifstream infile;
+
+    infile.open("Lab13A.txt");
+
+    while (!infile.eof())
+    {
+        infile >> num;
+
+        cout << num << endl;
+        isprime(num);
+        printDivisors(num);
+        
+
+
+    }
+
+}
+
+void isprime(int num)
+{
+    int i;
+    bool prime = true;
+
+    if (num == 0 || num == 1)
+    {
+        prime = false;
+    }
+
+    for (i = 2; i <= num / 2; ++i) {
+        if (num % i == 0) {
+            prime = false;
+            break;
+        }
+    }
+
+    if (prime)
+        cout << num << " is a prime " << endl;
+    else
+        cout << num << " isnt a prime " << endl;
+}
+
+void printDivisors(int num)
+{
+    int divisor;
+
+    cout << "The divsors of " << num << " are" << endl;
+
+    cout << 1 << " " << num << " ";
+
+
+    for (divisor = 2; divisor <= (num / 2); divisor++)
+    {
+        if ((num % divisor) == 0)
+            cout << divisor << " ";
+
+    }
+
+    cout << endl;
+}
