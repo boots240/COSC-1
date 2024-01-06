@@ -1,0 +1,25 @@
+// Lab7A.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//check weather number is true or false
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	int userA;
+
+	cout << "Enter number here: ";
+	cin >> userA;
+
+	if (userA % 2 == 0)
+		cout << "Your number is even";
+
+	else
+		cout << "Your number is odd";
+
+
+
+}
+
