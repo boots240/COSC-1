@@ -1,0 +1,90 @@
+//Lab21B.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//listing and adding up 2 dimensional arrays 
+
+#include <iostream>
+#include <fstream>
+
+
+using namespace std;
+
+void reciever(int table[5][5]);
+
+void printer(int table[5][5]);
+
+int adder(int table[5][5]);
+
+int main()
+{
+
+    int ftotal;
+    int table[5][5];
+    reciever(table);
+
+    printer(table);
+
+    ftotal = adder(table);
+
+    cout << "Grand Total: " << ftotal;
+
+
+}
+
+void reciever(int table[5][5])
+{
+    ifstream infile;
+    infile.open("Lab21B.txt");
+
+    for (int r = 0; r < 5; r++)
+    {
+        for (int c = 0; c < 5; c++)
+        {
+
+            infile >> table[r][c];
+
+        }
+    }
+
+}
+
+void printer(int table[5][5])
+{
+
+    for (int r = 0; r < 5; r++)
+    {
+        for (int c = 0; c < 5; c++)
+        {
+
+            cout << table[r][c] << " ";
+
+        }
+        cout << endl;
+    }
+
+
+}
+
+int adder(int table[5][5])
+{
+
+    int sum = 0,total = 0, ftotal = 0;
+
+    for (int r = 0; r < 5; r++)
+    {
+
+        for (int c = 0; c < 5; c++)
+        {
+
+            total = total + table[r][c];
+
+
+        }
+        ftotal += total;
+
+        cout << "Total: " << total << endl;
+
+        total = 0;
+    }
+    return ftotal;
+
+}
