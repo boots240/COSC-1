@@ -1,0 +1,34 @@
+// Lab11A.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+// Program that asks the user for an integer and then determine all of the divisors for that number
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+
+	int i;
+	int divisor;
+
+	cout << "Give me an integer: ";
+	cin >> i;
+
+	cout << "The divsors of " << i << " are" << endl;
+
+	cout << 1 << " " << i << " ";
+	
+
+	for (divisor = 2; divisor <= (i/2); divisor++)
+	{
+		if ( (i % divisor) == 0)
+			cout << divisor << " ";
+
+	}
+
+	
+}
+
