@@ -1,0 +1,33 @@
+// Lab19B.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+// Program that declares an array of 10 integers and sets each value in the array equal to 5 times its index.
+#include <iostream>
+
+using namespace std;
+
+
+int main()
+{
+	int arr[10];
+	int total = 0, count = 0;
+
+	for (int i = 0; i < 10; i++)
+	{
+		arr[i] = 5 * i;
+
+		total = total + arr[i];
+	}
+
+	cout << "Total: " << total << endl;
+
+	cout << "Array:";
+	for (int j = 0; j < 10; j++)
+	{
+
+		cout << arr[j] << " ";
+
+	}
+
+
+}
+
