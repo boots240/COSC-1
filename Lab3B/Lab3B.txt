@@ -1,0 +1,24 @@
+// Lab3B
+//Ali Mohammed
+// calculating total amount of money 
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    double quarters;
+    double dimes;
+    double nickels;
+    double pennies;
+    double total;
+
+
+    cout << "Enter number of quarters, dimes, nickels, pennies you have in that order. (with spaces)" << endl;
+    cin >> quarters >> dimes >> nickels >> pennies;
+    total = quarters * .25 + dimes * .10 + nickels * .05 + pennies * .01;
+    cout << "total equals: " << total << endl;
+
+
+}
+
