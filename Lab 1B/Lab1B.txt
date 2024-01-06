@@ -1,0 +1,18 @@
+// Lab1B
+// Ali Mohammed
+//calculate area of triangle
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	double base, height, area;
+	cout << "input base and height" << endl;
+	cin >> base >> height;
+	area = .5 * base * height;
+	cout << "Area: " << area <<endl;
+
+
+}
+
