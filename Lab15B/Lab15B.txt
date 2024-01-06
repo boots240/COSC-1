@@ -1,0 +1,56 @@
+// Lab15B.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Ali Mohammed
+//Program that will read pairs of numbers from a text file (Lab15B.txt) and then find the largest common divisor for both of those numbers.
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int getLDiv(int num, int num2);
+
+int main()
+{
+    int num, num2, temp;
+
+    ifstream infile;
+
+    infile.open("Lab15B.txt");
+
+    while (!infile.eof())
+    {
+
+        infile >> num >> num2;
+
+        temp = getLDiv(num, num2);
+
+        cout << " GCD: " << temp;
+        cout << " first: " << num << " second: " << num2 << endl;
+       
+
+    }
+}
+
+
+    int getLDiv(int num, int num2)
+
+   {
+        int temp = 0;
+
+        for (int divisor = 1; divisor <= num; divisor++)
+        {
+            if ((num % divisor) == 0 && num2 % divisor == 0 )
+                temp = divisor;
+
+        }
+
+        return temp;
+
+   }
+
+        
+       
+
+
+  
+
